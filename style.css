@@ -1,0 +1,276 @@
+/* ------------------------------------ */
+/*             PEPPERONI PARTY          */
+/* ------------------------------------ */
+
+/* GENERAL */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    z-index: 1;
+    background-color: white;
+}
+
+/* COLORS */
+:root {
+    --white: rgb(255, 255, 255);
+    --darkBlue: rgb(38, 39, 64);
+    --lightBlue: rgb(241, 249, 255);
+    --wheat: rgb(245, 222, 179);
+    --shadow: rgb(147 147 147 / 25%);
+}
+
+/* DIMENSIONS */
+:root {
+    --headerHeight: 77px;
+}
+
+/* TYPOGRAPHY */
+h1 {
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--darkBlue);
+    margin: 20px 0;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 1.8em;
+    font-weight: 500;
+    color: var(--darkBlue);
+    margin: 18px 0;
+}
+
+h3 {
+    font-family: sans-serif;
+    font-size: 1.6em;
+    font-weight: 500;
+    color: var(--darkBlue);
+    margin: 16px 0;
+}
+
+span {
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--darkBlue);
+}
+
+p {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: var(--darkBlue);
+}
+
+a {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: var(--darkBlue);
+}
+
+/* HEADER */
+header {
+    background-color: var(--darkBlue);
+    margin-bottom: 60px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    z-index: 10;
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2.6em;
+}
+
+header h2 {
+    color: var(--white);
+    font-weight: 300;
+    text-decoration: wavy;
+    transform: rotate(6deg);
+}
+
+header #negative-rotation {
+    transform: rotate(-6deg);
+}
+
+.title-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+}
+
+.title-box h1 {
+    display: block;
+    font-weight: 600;
+    color: white;
+}
+
+.logo {
+    display: block;
+    width: 46px;
+}
+
+/* GAME GOAL SECTION */
+.game-goal {
+    display: flex;
+    height: calc(100vh - var(--headerHeight));
+    margin: 0 2.6em;
+    margin-top: var(--headerHeight);
+}
+
+.game-goal .text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%;
+    margin-left: 2.6em;
+}
+
+.game-goal .text-column .headline-container {
+    width: 33em;
+    z-index: 2;
+    margin-right: -25em;
+    background-color: var(--white);
+    box-shadow: -4px 4px 10px 4px var(--shadow);
+    padding: 20px;
+    border-radius: 40px;
+}
+
+.game-goal .text-column h3 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.game-goal .text-column a {
+    font-size: 1.4em;
+    border: 1px solid var(--darkBlue);
+    border-radius: 6px;
+    padding: 8px 12px;
+    background-color: var(--darkBlue);
+    color: white;
+    box-shadow: -4px 4px 10px 4px var(--shadow);
+    text-decoration: none;
+}
+
+.game-goal .pizza-column {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--wheat);
+    width: 50%;
+    margin: 4em;
+    border-radius: 60px;
+    padding: 0 60px;
+    padding-right: 160px;
+}
+
+.game-goal .pizza-column .conveyer-belt-block {
+    display: flex;
+    width: 200px;
+    height: 100%;
+    background-image: url(conveyer-belt.jpg);
+    background-size: contain;
+    background-repeat: repeat-y;
+    background-position: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-goal .pizza-column .conveyer-belt-block img {
+    height: 20%;
+}
+
+.game-goal .info-column {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin: 2em 0;
+}
+
+.game-goal .info-column .text-block {
+    width: 70%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lightBlue);
+    border-radius: 10px;
+    border: 1px solid var(--darkBlue);
+    font-size: 1.4em;
+    padding: 0.2em;
+    text-align: center;
+}
+
+/* GAME PATH SECTION */
+.game-path {
+    display: flex;
+    gap: 2em;
+    height: calc(100vh - var(--headerHeight));
+    margin: 0 2.6em;
+    margin-top: var(--headerHeight);
+}
+
+.game-path .column {
+    background-color: var(--wheat);
+    width: calc(100%/3);
+    margin: 4em 0;
+    border-radius: 60px;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-path .empty-pizza::after {
+    content: '\21E8';
+    position: absolute;
+    left: 30%;
+    top: 152%;
+    font-size: 7em;
+    color: var(--darkBlue);
+}
+
+.game-path .additions-pizza::after {
+    content: '\21E8';
+    position: absolute;
+    left: 62.4%;
+    top: 152%;
+    font-size: 7em;
+    color: var(--darkBlue);
+}
+
+.game-path .column .image-box {
+    display: flex;
+    justify-content: center;
+}
+
+.game-path .column img {
+    width: 80%;
+}
+
+.game-path .column h2 {
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.game-path .column h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
